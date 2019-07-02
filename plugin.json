@@ -4,5 +4,5 @@
   "namespace"         :"Ecos",
   "author"            :"Andrej Bykadorov",
   "type"              :"template",
-  "serviceProvider"   :"Ecos\\Providers\\HelloWorldServiceProvider"
+  "serviceProvider"   :"Ecos\\Providers\\EcosServiceProvider"
 }
