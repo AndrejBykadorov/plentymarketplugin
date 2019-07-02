@@ -1,0 +1,8 @@
+{
+  "name"              :"EcosPlugin",
+  "description"       :"Ecos official plugin",
+  "namespace"         :"Ecos",
+  "author"            :"Andrej Bykadorov",
+  "type"              :"template",
+  "serviceProvider"   :"Ecos\\Providers\\HelloWorldServiceProvider"
+}
