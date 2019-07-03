@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "name": "EcosPLugin",
+  "name": "EcosPlugin",
   "description": "Ecos Integration Plugin",
   "namespace": "Ecos",
   "author": "Ecos",
