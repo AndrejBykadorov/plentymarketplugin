@@ -11,7 +11,7 @@
     {
       "label": "menu.categories",
       "menu": "settings/markets/ecos",
-      "urlKey": "ecos-authentication",
+      "urlKey": "ecos-categories",
       "entryPoint": "index.html?action=categories"
     }
   ]
