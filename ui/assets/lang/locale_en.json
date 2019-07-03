@@ -1,0 +1,124 @@
+{
+  "auth": {
+    "account": {
+      "consumerKey": "Consumer key",
+      "sharedSecret": "Shared secret",
+      "status": "Status",
+      "requestsRemaining": "Requests remaining",
+      "remove": "Remove",
+      "cancel": "Cancel",
+      "active": "active",
+      "inactive": "inactive",
+      "removeAccount": "Remove Account",
+      "removeConfirmationMessage": "All settings for this account will be deleted. Really delete account?"
+    },
+    "alerts": {
+      "checkingLoginStatus": "Checking authentication status.",
+      "alreadyAuthenticated": "You are already authenticated but you can renew your token if needed.",
+      "notAuthenticated": "You are currently not authenticated. Please log in.",
+      "loginStatusCheckError": "Login status not checked.",
+      "fetchLoginUrlError": "Could not get the login url.",
+      "cannotDeleteAccount": "Account not deleted"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "form": {
+      "shopId": "Shop ID",
+      "mainLanguage": "Main Shop Language",
+      "exportLanguages": "Export languages",
+      "processes": "Processes"
+    },
+    "languages": {
+      "english": "English",
+      "german": "German",
+      "french": "French"
+    },
+    "processes": {
+      "itemExport": "Item Export",
+      "stockUpdate": "Stock Update",
+      "orderImport": "Order Import"
+    },
+    "alerts": {
+      "invalidShopId": "Invalid Shop ID.",
+      "invalidMainLanguage": "Invalid main shop language.",
+      "invalidExportLanguages": "Invalid export languages.",
+      "settingsSaved": "Settings saved.",
+      "settingsNotSaved": "Settings not saved."
+    }
+  },
+  "legalInformation": {
+    "title": "Legal information",
+    "language": "Language",
+    "text": "Text"
+  },
+  "shippingProfiles": {
+    "tooltips": {
+      "addCorrelation": "Add correlation",
+      "import": "Import Etsy shipping profiles"
+    },
+    "list": {
+      "plentymarketsShippingProfile": "Plentymarkets Shipping Profile",
+      "etsyShippingProfile": "Etsy Shipping Profile"
+    },
+    "alerts": {
+      "correlationsSaved": "Shipping profile correlations saved.",
+      "correlationsNotSaved": "Shipping profile correlations not saved.",
+      "shippingProfilesImported": "Etsy shipping profiles imported.",
+      "shippingProfilesNotImported": "Etsy shipping profiles not imported."
+    }
+  },
+  "taxonomies": {
+    "splitViewNames": {
+      "correlations": "Category Correlations",
+      "newCorrelation": "New category correlation"
+    },
+    "list": {
+      "plentymarketsCategory": "Plentymarkets category",
+      "etsyTaxonomy": "Etsy category",
+      "buttons": {
+        "edit": "Edit",
+        "delete": "Delete"
+      }
+    },
+    "correlation": {
+      "plentymarketsCategory": "Plentymarkets category",
+      "etsyTaxonomy": "Etsy category"
+    },
+    "tooltips": {
+      "addCorrelation": "Add correlation"
+    },
+    "alerts": {
+      "correlationsSaved": "Category correlations saved.",
+      "correlationsNotSaved": "Category correlations not saved."
+    }
+  },
+  "properties": {
+    "splitViewNames": {
+      "correlations": "Property Correlations",
+      "newCorrelation": "New property correlation"
+    },
+    "list": {
+      "systemProperty": "Plentymarkets property",
+      "property": "Etsy property",
+      "buttons": {
+        "edit": "Edit",
+        "delete": "Delete"
+      }
+    },
+    "correlation": {
+      "systemProperty": "Plentymarkets property",
+      "property": "Etsy property"
+    },
+    "tooltips": {
+      "addCorrelation": "Add correlation",
+      "import": "Import Etsy properties"
+    },
+    "alerts": {
+      "correlationsSaved": "Property correlations saved.",
+      "correlationsNotSaved": "Property correlations not saved.",
+      "propertiesImported": "Etsy properties imported.",
+      "propertiesNotImported": "Etsy properties not imported."
+    }
+  } 
+}

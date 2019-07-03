@@ -1,0 +1,123 @@
+{
+  "auth": {
+    "account": {
+      "consumerKey": "Consumer key",
+      "sharedSecret": "Shared secret",
+      "status": "Status",
+      "remove": "Löschen",
+      "cancel": "Abbrechen",
+      "active": "aktiv",
+      "inactive": "inaktiv",
+      "removeAccount": "Konto Löschen",
+      "removeConfirmationMessage": "Alle Einstellungen für dieses Konto werden gelöscht. Konto wirklich löschen?"
+    },
+    "alerts": {
+      "checkingLoginStatus": "Authentifizierungsstatus wird überprüft.",
+      "alreadyAuthenticated": "Sie sind bereits authentifiziert. Sie können den Token dennoch erneuern.",
+      "notAuthenticated": "Sie sind nicht authentifiziert. Loggen Sie sich ein.",
+      "loginStatusCheckError": "Loginstatus nicht überprüft.",
+      "fetchLoginUrlError": "Login-URL nicht gefunden.",
+      "cannotDeleteAccount": "Konto nicht gelöscht"
+    }
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "form": {
+      "shopId": "Shop-ID",
+      "mainLanguage": "Shop-Sprache",
+      "exportLanguages": "Exportsprachen",
+      "processes": "Prozesse"
+    },
+    "languages": {
+      "english": "Englisch",
+      "german": "Deutsch",
+      "french": "Französisch"
+    },
+    "processes": {
+      "itemExport": "Artikelexport",
+      "stockUpdate": "Bestandsabgleich",
+      "orderImport": "Auftragsimport"
+    },
+    "alerts": {
+      "invalidShopId": "Shop-ID nicht gültig.",
+      "invalidMainLanguage": "Shop-Sprache nicht gültig.",
+      "invalidExportLanguages": "Exportsprachen nicht gültig.",
+      "settingsSaved": "Einstellungen wurden gespeichert.",
+      "settingsNotSaved": "Einstellungen nicht gespeichert."
+    }
+  },
+  "legalInformation": {
+    "title": "Rechtliche Hinweise",
+    "language": "Sprache",
+    "text": "Text"
+  },
+  "shippingProfiles": {
+    "tooltips": {
+      "addCorrelation": "Verknüpfung hinzufügen",
+      "import": "Etsy-Versandprofile importieren"
+    },
+    "list": {
+      "plentymarketsShippingProfile": "Plentymarkets-Versandprofil",
+      "etsyShippingProfile": "Etsy-Versandprofil"
+    },
+    "alerts": {
+      "correlationsSaved": "Versandprofilverknüpfungen gespeichert.",
+      "correlationsNotSaved": "Versandprofilverknüpfungen nicht gespeichert.",
+      "shippingProfilesImported": "Versandprofile importiert.",
+      "shippingProfilesNotImported": "Versandprofile nicht importiert."
+    }
+  },
+  "taxonomies": {
+    "splitViewNames": {
+      "correlations": "Kategorie-Verknüpfungen",
+      "newCorrelation": "Neue Kategorieverknüpfung"
+    },
+    "list": {
+      "plentymarketsCategory": "Plentymarkets-Kategorie",
+      "etsyTaxonomy": "Etsy-Kategorie",
+      "buttons": {
+        "edit": "Bearbeiten",
+        "delete": "Löschen"
+      }
+    },
+    "correlation": {
+      "plentymarketsCategory": "Plentymarkets-Kategorie",
+      "etsyTaxonomy": "Etsy-Kategorie"
+    },
+    "tooltips": {
+      "addCorrelation": "Verknüpfung hinzufügen"
+    },
+    "alerts": {
+      "correlationsSaved": "Kategorie-Verknüpfungen gespeichert.",
+      "correlationsNotSaved": "Kategorie-Verknüpfungen nicht gespeichert."
+    }
+  },
+  "properties": {
+    "splitViewNames": {
+      "correlations": "Merkmalverknüpfungen",
+      "newCorrelation": "Neue Merkmalverknüpfung"
+    },
+    "list": {
+      "systemProperty": "Plentymarkets-Merkmal",
+      "property": "Etsy-Merkmal",
+      "buttons": {
+        "edit": "Bearbeiten",
+        "delete": "Löschen"
+      }
+    },
+    "correlation": {
+      "systemProperty": "Plentymarkets-Merkmal",
+      "property": "Etsy-Merkmal"
+    },
+    "tooltips": {
+      "addCorrelation": "Verknüpfung hinzufügen",
+      "import": "Etsy-Merkmale importieren"
+    },
+    "alerts": {
+      "correlationsSaved": "Merkmalverknüpfungen gespeichert.",
+      "correlationsNotSaved": "Merkmalverknüpfungen nicht gespeichert.",
+      "propertiesImported": "Etsy-Merkmale importiert.",
+      "propertiesNotImported": "Etsy-Merkmale nicht importiert."
+    }
+  }
+}
