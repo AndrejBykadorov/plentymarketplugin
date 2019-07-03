@@ -1,0 +1,18 @@
+{
+  "defaultEntryPoint": "index.html",
+  "namespace": "Ecos",
+  "menuEntries": [
+    {
+      "label": "menu.settings",
+      "menu": "settings/markets/ecos",
+      "urlKey": "ecos-settings",
+      "entryPoint": "index.html?action=settings"
+    },
+    {
+      "label": "menu.categories",
+      "menu": "settings/markets/ecos",
+      "urlKey": "ecos-authentication",
+      "entryPoint": "index.html?action=categories"
+    }
+  ]
+}
