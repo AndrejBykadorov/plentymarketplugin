@@ -7,6 +7,8 @@
     <base href="./">
 </head>
 <body>
-Hello Ecos!!
+Hello ECOS
+<br/>
+<?php echo $_GET["action"]; ?>
 </body>
 </html>
