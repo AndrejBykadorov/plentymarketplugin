@@ -1,8 +1,16 @@
 {
-  "name"              :"EcosPlugin",
-  "description"       :"Ecos official plugin!!",
-  "namespace"         :"Ecos",
-  "author"            :"Andrej Bykadorov",
-  "type"              :"template",
-  "serviceProvider"   :"Ecos\\Providers\\EcosServiceProvider"
+  "version": "1.0.0",
+  "name": "EcosPLugin",
+  "description": "Ecos Integration Plugin",
+  "namespace": "Ecos",
+  "author": "Ecos",
+  "email": "info@ecos.group",
+  "shortDescription": {
+    "de": "Ecos description",
+    "en": "Ecos description"
+  },
+  "license": "AGPL-3.0",
+  "price": 0.00,
+  "type": "general",
+  "serviceProvider": "Ecos\\EcosServiceProvider"
 }
