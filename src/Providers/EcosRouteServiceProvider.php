@@ -10,6 +10,6 @@ class EcosRouteServiceProvider extends RouteServiceProvider
 {
     public function map(Router $router)
     {
-        $router->get('hello','Ecos\Controllers\ContentController@sayHello');
+        //$router->get('hello','Ecos\Controllers\ContentController@sayHello');
     }
 }
