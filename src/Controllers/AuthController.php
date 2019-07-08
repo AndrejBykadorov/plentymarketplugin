@@ -28,7 +28,7 @@ class AuthController extends Controller
     }
 
     public function getAccessToken(Request $request, Response $response){
-        $item_list = $this->item->search();
+        $item_list = $this->item->search()->toArray();
 
         $items_final = array();
 
