@@ -13,30 +13,21 @@ use Plenty\Plugin\Controller;
 use Plenty\Plugin\Http\Request;
 use Plenty\Plugin\Http\Response;
 use Plenty\Plugin\Log\Loggable;
-use Plenty\Modules\Authorization\Contracts;
-
 
 class AuthController extends Controller
 
 {
 
-    private $contract;
+    private $item;
 
-    public function __construct(Plenty\Modules\Item\Manufacturer\Contracts\ManufacturerRepositoryContract $contract)
+    public function __construct(\Plenty\Modules\Item\Item\Contracts\ItemRepositoryContract $item)
     {
-        $this->contract = $contract;
+        $this->item = $item;
     }
 
     public function getAccessToken(Request $request, Response $response){
-        $authHelper = pluginApp(\Plenty\Modules\Authorization\Services\AuthHelper::class);
-
-        $response->json($authHelper->processUnguarded(
-            function () {
-                //unguarded
-                return $this->contract->all();
-            }));
-
-        //return $response->json($this->contract->all());
+        $item_list = $this->item->search();
+        return $response->json($item_list);
     }
 }
 
