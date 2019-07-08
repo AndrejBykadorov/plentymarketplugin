@@ -20,13 +20,10 @@ class AuthController extends Controller
 
 {
 
-
     public function getAccessToken(Request $request, Response $response, AuthorizedUserRepositoryContract $contract){
         try {
             //$contactRepository = pluginApp(ContactRepositoryContract::class);
-
             $user = $contract->getCurrentAuthorizedUser();
-
             return json_encode($user);
 
         } catch (\Exception $e) {
