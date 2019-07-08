@@ -7,7 +7,7 @@ use Plenty\Plugin\Routing\Router as WebRouter;
 /**
  * Class EtsyRouteServiceProvider
  */
-class EtsyRouteServiceProvider extends RouteServiceProvider
+class EcosRouteServiceProvider extends RouteServiceProvider
 {
     /**
      * @param ApiRouter $api
