@@ -1,15 +1,20 @@
 <?php
-
-namespace Ecos\Providers;
-
-
+namespace Ecos;
 use Plenty\Plugin\RouteServiceProvider;
-use Plenty\Plugin\Routing\Router;
+use Plenty\Plugin\Routing\ApiRouter;
+use Plenty\Plugin\Routing\Router as WebRouter;
 
-class EcosRouteServiceProvider extends RouteServiceProvider
+/**
+ * Class EtsyRouteServiceProvider
+ */
+class EtsyRouteServiceProvider extends RouteServiceProvider
 {
-    public function map(Router $router)
+    /**
+     * @param ApiRouter $api
+     * @param WebRouter $webRouter
+     */
+    public function map(ApiRouter $api, WebRouter $webRouter)
     {
-        //$router->get('hello','Ecos\Controllers\ContentController@sayHello');
+        $webRouter->get('markets/ecos/auth/access-token', ['uses' => 'Ecos\Controllers\AuthController@getAccessToken']);
     }
 }
