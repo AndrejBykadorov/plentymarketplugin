@@ -28,7 +28,15 @@ class AuthController extends Controller
     }
 
     public function getAccessToken(Request $request, Response $response){
-        return $response->json($this->contract->all());
+        $authHelper = pluginApp(\Plenty\Modules\Authorization\Services\AuthHelper::class);
+
+        $response->json($authHelper->processUnguarded(
+            function () {
+                //unguarded
+                return $this->contract->all();
+            }));
+
+        //return $response->json($this->contract->all());
     }
 }
 
