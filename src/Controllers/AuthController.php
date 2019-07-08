@@ -22,21 +22,13 @@ class AuthController extends Controller
 
     private $contract;
 
-    public function __construct(\Plenty\Modules\Authorization\Contracts\AuthorizedUserRepositoryContract $contract)
+    public function __construct(\Plenty\Modules\User\Contracts\UserRepositoryContract $contract)
     {
         $this->contract = $contract;
     }
 
     public function getAccessToken(Request $request, Response $response){
-            if(is_null($this->contract->getCurrentAuthorizedUser())){
-                return $response->json(serialize($this->contract));
-            }else{
-                return $response->json(["else" => "else"]);
-            }
-
-
-
-
+        return $response->json($this->contract->getCurrentUser()->toArray());
     }
 }
 
