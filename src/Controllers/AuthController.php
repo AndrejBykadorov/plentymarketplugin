@@ -22,13 +22,13 @@ class AuthController extends Controller
 
     private $contract;
 
-    public function __construct(\Plenty\Modules\User\Contracts\UserRepositoryContract $contract)
+    public function __construct(Plenty\Modules\Item\Manufacturer\Contracts\ManufacturerRepositoryContract $contract)
     {
         $this->contract = $contract;
     }
 
     public function getAccessToken(Request $request, Response $response){
-        return $response->json($this->contract->getAll());
+        return $response->json($this->contract->all()->toArray());
     }
 }
 
