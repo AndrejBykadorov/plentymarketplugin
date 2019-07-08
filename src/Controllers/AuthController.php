@@ -18,12 +18,25 @@ use Plenty\Modules\Authorization\Contracts;
 
 
 class AuthController extends Controller
+
 {
+
+    private $contract;
+
+    public function __construct(Contracts $contract)
+    {
+        $this->contract = $contract;
+    }
+
+
     public function getAccessToken(Request $request){
         try {
+            //$contactRepository = pluginApp(ContactRepositoryContract::class);
 
-            //$user = $this->contracts->getCurrentAuthorizedUser();
-            return json_encode($request);
+            $user = $this->contract->getCurrentAuthorizedUser();
+
+            return json_encode($user);
+
         } catch (\Exception $e) {
             throw new \Exception($e->getMessage(), $e->getCode());
         }
