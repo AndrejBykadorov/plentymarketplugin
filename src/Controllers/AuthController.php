@@ -36,7 +36,7 @@ class AuthController extends Controller
 
             $images = $this->item_image->findByItemId($key);
 
-            $items_final["id"] = array(
+            $items_final[$key] = array(
                 "id" => $item_array["id"],
                 "manufacturerId" => $item_array["manufacturerId"],
                 "images" => $images
