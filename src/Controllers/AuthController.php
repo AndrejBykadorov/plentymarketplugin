@@ -19,15 +19,32 @@ class AuthController extends Controller
 {
 
     private $item;
+    private $item_image;
 
-    public function __construct(\Plenty\Modules\Item\Item\Contracts\ItemRepositoryContract $item)
+    public function __construct(\Plenty\Modules\Item\Item\Contracts\ItemRepositoryContract $item, \Plenty\Modules\Item\ItemImage\Contracts\ItemImageRepositoryContract $item_image)
     {
         $this->item = $item;
+        $this->item_image = $item_image;
     }
 
     public function getAccessToken(Request $request, Response $response){
         $item_list = $this->item->search();
-        return $response->json($item_list);
+
+        $items_final = array();
+
+        foreach ($item_list["entries"] as $key => $item_array){
+
+            $images = $this->item_image->findByItemId($key);
+
+            $items_final["id"] = array(
+                "id" => $item_array["id"],
+                "manufacturerId" => $item_array["manufacturerId"],
+                "images" => $images
+            );
+
+        }
+
+        return $response->json($items_final);
     }
 }
 
