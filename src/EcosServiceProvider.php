@@ -6,7 +6,7 @@
  * Time: 14:28
  */
 
-namespace Ecos\Providers;
+namespace Ecos;
 
 
 use Plenty\Plugin\ServiceProvider;
