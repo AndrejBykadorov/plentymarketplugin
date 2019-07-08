@@ -8,7 +8,6 @@
 
 namespace Ecos;
 
-
 use Plenty\Plugin\ServiceProvider;
 
 class EcosServiceProvider extends ServiceProvider
