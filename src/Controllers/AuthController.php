@@ -29,7 +29,9 @@ class AuthController extends Controller
 
     public function getAccessToken(Request $request, Response $response){
             $user = $this->contract->getCurrentAuthorizedUser();
-            return $response->json(["user" => $user->toArray(), "test" => "Kaja neumi psat", "test2" => "test"]);
+            return $response->json(["test" => "Kaja neumi psat", "test2" => "test"]);
+
+        //"user" => $user->toArray()
     }
 }
 
