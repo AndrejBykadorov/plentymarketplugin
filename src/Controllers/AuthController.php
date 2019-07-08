@@ -9,7 +9,6 @@ namespace Ecos\Controllers;
  * Time: 13:07
  */
 
-use Plenty\Modules\Plugin\DynamoDb\Contracts\DynamoDbRepositoryContract;
 use Plenty\Plugin\Controller;
 use Plenty\Plugin\Http\Request;
 use Plenty\Plugin\Http\Response;
@@ -21,19 +20,12 @@ class AuthController extends Controller
 
 {
 
-    private $contract;
 
-    public function __construct(Contracts $contract)
-    {
-        $this->contract = $contract;
-    }
-
-
-    public function getAccessToken(Request $request){
+    public function getAccessToken(Request $request, Response $response, Contracts $contract){
         try {
             //$contactRepository = pluginApp(ContactRepositoryContract::class);
 
-            $user = $this->contract->getCurrentAuthorizedUser();
+            $user = $contract->getCurrentAuthorizedUser();
 
             return json_encode($user);
 
