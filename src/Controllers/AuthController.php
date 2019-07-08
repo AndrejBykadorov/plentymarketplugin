@@ -33,7 +33,7 @@ class AuthController extends Controller
 
             //$contactRepository = pluginApp(ContactRepositoryContract::class);
             $user = $this->contract->getCurrentAuthorizedUser();
-            return "aaa";
+            $response->json($user);
 
         } catch (\Exception $e) {
             throw new \Exception($e->getMessage(), $e->getCode());
