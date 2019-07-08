@@ -22,8 +22,8 @@ class AuthController extends Controller
     public function getAccessToken(Request $request){
         try {
 
-            $user = $this->contracts->getCurrentAuthorizedUser();
-            return json_encode($user);
+            //$user = $this->contracts->getCurrentAuthorizedUser();
+            return json_encode($request);
         } catch (\Exception $e) {
             throw new \Exception($e->getMessage(), $e->getCode());
         }
