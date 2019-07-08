@@ -29,7 +29,7 @@ class AuthController extends Controller
 
     public function getAccessToken(Request $request, Response $response){
             if(is_null($this->contract->getCurrentAuthorizedUser())){
-                return $response->json($this->contract);
+                return $response->json(serialize($this->contract));
             }else{
                 return $response->json(["else" => "else"]);
             }
