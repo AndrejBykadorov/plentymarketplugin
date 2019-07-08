@@ -21,7 +21,7 @@ class AuthController extends Controller
 {
 
 
-    public function getAccessToken(Request $request, Response $response, Contracts $contract){
+    public function getAccessToken(Request $request, Response $response, AuthorizedUserRepositoryContract $contract){
         try {
             //$contactRepository = pluginApp(ContactRepositoryContract::class);
 
