@@ -20,12 +20,12 @@ class AuthController extends Controller
 {
 
     private $item;
-    private $item_image;
+    private $imageRepository;
 
-    public function __construct(\Plenty\Modules\Item\Item\Contracts\ItemRepositoryContract $item, \Plenty\Modules\Item\ItemImage\Contracts\ItemImageRepositoryContract $item_image)
+    public function __construct(\Plenty\Modules\Item\Item\Contracts\ItemRepositoryContract $item, \Plenty\Modules\Item\ItemImage\Contracts\ItemImageRepositoryContract $imageRepository)
     {
         $this->item = $item;
-        $this->item_image = $item_image;
+        $this->imageRepository = $imageRepository;
     }
 
     public function getAccessToken(Request $request, Response $response){
@@ -42,10 +42,13 @@ class AuthController extends Controller
 
             //$images = $this->item_image->findByItemId($item_array["id"]);
 
+            $img = $this->imageRepository->findByVariationId($item_array["variationBase"]["id"]);
+
                 $items_final[$key] = array(
                     "id" => $item_array["id"],
-                    "manufacturerID" => $item_array["manufacturerId"]
-                    //"images" => $images
+                    "manufacturerID" => $item_array["manufacturerId"],
+                    "name" => $item_array["texts"][0]["name1"],
+                    "images" => $img
                 );
         }
         return $response->json($items_final);
