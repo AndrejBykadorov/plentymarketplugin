@@ -65,6 +65,9 @@ class AuthController extends Controller
                 //$images = $this->imageRepository->findByItemId($item_array["id"]);
                 //$img = $this->imageRepository->findByVariationId($item_array["variationBase"]["id"]);
 
+
+
+
                 $items_final[$key] = array(
                     "id" => $item_array["id"],
                     "manufacturerID" => $item_array["manufacturerId"],
@@ -78,7 +81,9 @@ class AuthController extends Controller
         //$this->cred->all();
 
 
-        return $response->json($this->cred->all());
+        $cred =  pluginApp(\Plenty\Modules\Market\Credentials\Contracts\CredentialsRepositoryContract::class);
+
+        return $response->json($cred->all());
     }
 }
 
