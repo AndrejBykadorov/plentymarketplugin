@@ -50,7 +50,7 @@ class AuthController extends Controller
 
     public function get($name, $default = null)
     {
-        $data = $this->dynamoDbRepo->getItem("Ecos", self::TABLE_NAME, true, [
+        $data = $this->dynamoDbRepo->getItem("Etsy", self::TABLE_NAME, true, [
             'name' => [\Plenty\Modules\Plugin\DynamoDb\Contracts\DynamoDbRepositoryContract::FIELD_TYPE_STRING => $name]
         ]);
         if(isset($data['value'][ \Plenty\Modules\Plugin\DynamoDb\Contracts\DynamoDbRepositoryContract::FIELD_TYPE_STRING ]))
