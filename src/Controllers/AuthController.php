@@ -39,7 +39,7 @@ class AuthController extends Controller
 
                 $items_final[$key] = array(
                     "id" => $item_array["id"],
-                    "manufacturerId" => $item_array["manufacturerId"],
+                    "manufacturerID" => $item_array["manufacturerId"],
                     "images" => $images
                 );
         }
