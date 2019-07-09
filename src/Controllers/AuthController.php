@@ -40,12 +40,12 @@ class AuthController extends Controller
 
         foreach ($item_list["entries"] as $key => $item_array){
 
-            $images = $this->item_image->findByItemId($item_array["id"]);
+            //$images = $this->item_image->findByItemId($item_array["id"]);
 
                 $items_final[$key] = array(
                     "id" => $item_array["id"],
-                    "manufacturerID" => $item_array["manufacturerId"],
-                    "images" => $images
+                    "manufacturerID" => $item_array["manufacturerId"]
+                    //"images" => $images
                 );
         }
         return $response->json($items_final);
