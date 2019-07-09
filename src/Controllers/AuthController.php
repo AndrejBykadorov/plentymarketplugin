@@ -42,11 +42,9 @@ class AuthController extends Controller
 
         $itemRep = pluginApp(\Plenty\Modules\Item\Item\Contracts\ItemRepositoryContract::class);
 
-        $params = [
-                'images' => null
-        ];
+        $params = ["images"];
 
-        $item_list = $itemRep->search([],[],1,50)->toArray();
+        $item_list = $itemRep->search([],[],1,50, $params)->toArray();
 
         foreach ($item_list["entries"] as $key => $item_array) {
 
