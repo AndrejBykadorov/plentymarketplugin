@@ -42,14 +42,15 @@ class AuthController extends Controller
 
 
             if($item_array["id"] == 133){
-                $images = $this->imageRepository->findByItemId($item_array["id"]);
+
+                //$images = $this->imageRepository->findByItemId($item_array["id"]);
                 //$img = $this->imageRepository->findByVariationId($item_array["variationBase"]["id"]);
 
                 $items_final[$key] = array(
                     "id" => $item_array["id"],
                     "manufacturerID" => $item_array["manufacturerId"],
-                    "name" => $item_array["texts"][0]["name1"],
-                    "images" => $images
+                    "name" => $item_array["texts"][0]["name1"]
+                    //"images" => $images
                 );
             }
 
