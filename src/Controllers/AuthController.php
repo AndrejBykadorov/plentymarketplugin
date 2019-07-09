@@ -14,76 +14,76 @@ use Plenty\Plugin\Http\Request;
 use Plenty\Plugin\Http\Response;
 use Plenty\Plugin\Log\Loggable;
 use Plenty\Modules\Item\ItemImage\Contracts;
+use Plenty\Modules\Plugin\DynamoDb\Contracts\DynamoDbRepositoryContract;
+
+
 
 class AuthController extends Controller
 
+
 {
 
+    const PLUGIN_NAME = 'Etsy';
+    const TABLE_NAME = 'settings';
+    const SETTINGS_TOKEN_REQUEST = 'token_request';
+    const SETTINGS_ACCESS_TOKEN = 'access_token';
+    const SETTINGS_SETTINGS = 'settings';
+    const SETTINGS_ETSY_SHOPS = 'etsy_shops';
+    const SETTINGS_ORDER_REFERRER = 'order_referrer';
+    const SETTINGS_LAST_ORDER_IMPORT = "last_order_import";
+    const SETTINGS_LAST_ITEM_EXPORT = "last_item_export";
+    const SETTINGS_LAST_STOCK_UPDATE = "last_stock_update";
+    const SETTINGS_PROCESS_ITEM_EXPORT = 'item_export';
+    const SETTINGS_PROCESS_STOCK_UPDATE = 'stock_update';
+    const SETTINGS_PROCESS_ORDER_IMPORT = 'order_import';
+
+    private $dynamoDbRepo;
     private $item;
     private $imageRepository;
     private $cred;
 
 
-    public function __construct(\Plenty\Modules\Item\Item\Contracts\ItemRepositoryContract $item, \Plenty\Modules\Item\ItemImage\Contracts\ItemImageRepositoryContract $imageRepository, \Plenty\Modules\Market\Credentials\Contracts\CredentialsRepositoryContract $cred)
+    public function __construct(DynamoDbRepositoryContract $dynamoDbRepository)
     {
-        $this->item = $item;
-        $this->cred = $cred;
-        $this->imageRepository = $imageRepository;
+        $this->dynamoDbRepo = $dynamoDbRepository;
     }
+
+    public function get($name, $default = null)
+    {
+        $data = $this->dynamoDbRepo->getItem("Ecos", self::TABLE_NAME, true, [
+            'name' => [\Plenty\Modules\Plugin\DynamoDb\Contracts\DynamoDbRepositoryContract::FIELD_TYPE_STRING => $name]
+        ]);
+        if(isset($data['value'][ \Plenty\Modules\Plugin\DynamoDb\Contracts\DynamoDbRepositoryContract::FIELD_TYPE_STRING ]))
+        {
+            return $data['value'][ \Plenty\Modules\Plugin\DynamoDb\Contracts\DynamoDbRepositoryContract::FIELD_TYPE_STRING ];
+        }
+        return $default;
+    }
+
+
 
     public function getAccessToken(Request $request, Response $response){
 
-        //$item_list = $this->item->search()->toArray();
-
-        $items_final = array();
-
-        $itemRep =  pluginApp(\Plenty\Modules\Item\Item\Contracts\ItemRepositoryContract::class);
-
-        $params = [
-            'with'  => [
-                'images' => null,
-                // 'ItemImages' => null,
-                // 'itemImages' => null,
-                'variationImages' => null,
-                'variationImageList' => null,
-                'item' => null,
-                'itemTexts' => null,
-                'variationSalesPrices' => null,
-            ],
-        ];
-
-
-        $item_list = $itemRep->search()->toArray();
-
-
-
-        foreach ($item_list["entries"] as $key => $item_array){
-
-
-            if($item_array["id"] == 133){
-
-                //$images = $this->imageRepository->findByItemId($item_array["id"]);
-                //$img = $this->imageRepository->findByVariationId($item_array["variationBase"]["id"]);
-
-
-
-
-                $items_final[$key] = array(
-                    "id" => $item_array["id"],
-                    "manufacturerID" => $item_array["manufacturerId"],
-                    "name" => $item_array["texts"][0]["name1"]
-                    //"images" => $images
-                );
-            }
-
-        }
 
         //$this->cred->all();
 
 
-        $cred =  pluginApp(\Plenty\Modules\Market\Credentials\Contracts\CredentialsRepositoryContract::class);
+        //$cred =  pluginApp(\Plenty\Modules\Market\Credentials\Contracts\CredentialsRepositoryContract::class);
 
-        return $response->json($cred->all());
+
+
+
+        $data = $this->get(self::SETTINGS_ACCESS_TOKEN);
+
+
+        //$tokenData = $this->accountHelper->getTokenData();
+
+
+        return $response->json($data);
+
+
+
+
     }
 }
 
