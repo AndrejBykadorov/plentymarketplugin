@@ -29,9 +29,13 @@ class AuthController extends Controller
 
     public function getAccessToken(Request $request, Response $response){
 
-        $item_list = $this->item->search()->toArray();
+        //$item_list = $this->item->search()->toArray();
 
         $items_final = array();
+
+        $itemRep =  pluginApp(ItemRepositoryContract::class);
+
+        $item_list = $itemRep->search()->toArray();
 
         foreach ($item_list["entries"] as $key => $item_array){
 
