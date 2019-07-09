@@ -28,23 +28,20 @@ class AuthController extends Controller
     }
 
     public function getAccessToken(Request $request, Response $response){
+
         $item_list = $this->item->search()->toArray();
 
         $items_final = array();
 
         foreach ($item_list["entries"] as $key => $item_array){
 
-            $images = $this->item_image->findByItemId($item_array["id"]);
-
+            //$images = $this->item_image->findByItemId($item_array["id"]);
 
                 $items_final[$key] = array(
                     "id" => $item_array["id"],
-                    "manufacturerId" => $item_array["manufacturerId"],
-                    "images" => $images
+                    "manufacturerId" => $item_array["manufacturerId"]
                 );
-
         }
-
         return $response->json($items_final);
     }
 }
