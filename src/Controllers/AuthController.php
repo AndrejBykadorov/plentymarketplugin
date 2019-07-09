@@ -24,26 +24,56 @@ class AuthController extends Controller
 {
 
 
-private $settings;
+    private $item;
+    private $imageRepository;
 
-    public function __construct(\Plenty\Modules\System\Contracts\WebstoreConfigurationRepositoryContract $settings)
+    public function __construct(\Plenty\Modules\Item\Item\Contracts\ItemRepositoryContract $item, \Plenty\Modules\Item\ItemImage\Contracts\ItemImageRepositoryContract $imageRepository)
     {
-        $this->settings = $settings;
+        $this->item = $item;
+        $this->imageRepository = $imageRepository;
     }
 
+    public function getAccessToken(Request $request, Response $response)
+    {
 
-    public function getAccessToken(Request $request, Response $response){
+        //$item_list = $this->item->search()->toArray();
 
+        $items_final = array();
 
-        $data = $this->settings->findByPlentyId(44475)->toArray();
+        $itemRep = pluginApp(\Plenty\Modules\Item\Item\Contracts\ItemRepositoryContract::class);
 
+        $params = [
+            'with' => [
+                'images' => null,
+                // 'ItemImages' => null,
+                // 'itemImages' => null,
+                'item' => null,
+                'itemTexts' => null,
+                'variationSalesPrices' => null,
+            ],
+        ];
 
-        return $response->json($data);
+        $item_list = $itemRep->search([],[],1,50,$params)->toArray();
 
+        foreach ($item_list["entries"] as $key => $item_array) {
 
+            if ($item_array["id"] == 133) {
 
+                //$images = $this->imageRepository->findByItemId($item_array["id"]);
+                //$img = $this->imageRepository->findByVariationId($item_array["variationBase"]["id"]);
 
+                $items_final[$key] = array(
+                    "id" => $item_array["id"],
+                    "manufacturerID" => $item_array["manufacturerId"],
+                    "name" => $item_array["texts"][0]["name1"]
+                    //"images" => $images
+                );
+            }
+
+        }
+        return $response->json($item_list);
     }
+
 }
 
 
