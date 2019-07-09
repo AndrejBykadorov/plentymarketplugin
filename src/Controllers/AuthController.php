@@ -34,7 +34,7 @@ class AuthController extends Controller
 
         $items_final = array();
 
-        $itemRep =  pluginApp(\Plenty\Modules\Item\ItemImage\Contracts\ItemRepositoryContract::class);
+        $itemRep =  pluginApp(\Plenty\Modules\Item\Item\Contracts\ItemRepositoryContract::class);
 
         $item_list = $itemRep->search()->toArray();
 
