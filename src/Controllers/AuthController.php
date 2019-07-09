@@ -36,7 +36,7 @@ class AuthController extends Controller
 
         $itemRep =  pluginApp(\Plenty\Modules\Item\Item\Contracts\ItemRepositoryContract::class);
 
-        $itemRep->setSearchParams([
+        $params = [
             'with'  => [
                 'images' => null,
                 // 'ItemImages' => null,
@@ -47,10 +47,10 @@ class AuthController extends Controller
                 'itemTexts' => null,
                 'variationSalesPrices' => null,
             ],
-        ]);
+        ];
 
 
-        $item_list = $itemRep->search()->toArray();
+        $item_list = $itemRep->search(null, null, 1, 50, $params)->toArray();
 
         foreach ($item_list["entries"] as $key => $item_array){
 
