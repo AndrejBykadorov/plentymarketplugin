@@ -48,7 +48,7 @@ class AuthController extends Controller
                     "images" => $images
                 );
         }
-        return $response->json($item_list);
+        return $response->json($items_final);
     }
 }
 
