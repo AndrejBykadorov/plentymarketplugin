@@ -36,13 +36,12 @@ class AuthController extends Controller
 
             $images = $this->item_image->findByItemId($item_array["id"]);
 
-            //if(count($images) > 0){
+
                 $items_final[$key] = array(
                     "id" => $item_array["id"],
                     "manufacturerId" => $item_array["manufacturerId"],
                     "images" => $images
                 );
-            //}
 
         }
 
