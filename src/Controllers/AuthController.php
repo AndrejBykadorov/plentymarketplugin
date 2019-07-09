@@ -46,7 +46,7 @@ class AuthController extends Controller
                 'images' => null
         ];
 
-        $item_list = $itemRep->search([],[],1,50,$params)->toArray();
+        $item_list = $itemRep->search([],[],1,50)->toArray();
 
         foreach ($item_list["entries"] as $key => $item_array) {
 
