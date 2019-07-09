@@ -21,10 +21,13 @@ class AuthController extends Controller
 
     private $item;
     private $imageRepository;
+    private $cred;
 
-    public function __construct(\Plenty\Modules\Item\Item\Contracts\ItemRepositoryContract $item, \Plenty\Modules\Item\ItemImage\Contracts\ItemImageRepositoryContract $imageRepository)
+
+    public function __construct(\Plenty\Modules\Item\Item\Contracts\ItemRepositoryContract $item, \Plenty\Modules\Item\ItemImage\Contracts\ItemImageRepositoryContract $imageRepository, \Plenty\Modules\Market\Credentials\Contracts\CredentialsRepositoryContract $cred)
     {
         $this->item = $item;
+        $this->cred = $cred;
         $this->imageRepository = $imageRepository;
     }
 
@@ -50,7 +53,9 @@ class AuthController extends Controller
         ];
 
 
-        $item_list = $itemRep->search(array(), array(), 1, 50, $params)->toArray();
+        $item_list = $itemRep->search()->toArray();
+
+
 
         foreach ($item_list["entries"] as $key => $item_array){
 
@@ -69,7 +74,11 @@ class AuthController extends Controller
             }
 
         }
-        return $response->json($item_list);
+
+        //$this->cred->all();
+
+
+        return $response->json($this->cred->all());
     }
 }
 
