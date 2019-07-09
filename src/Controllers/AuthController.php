@@ -50,7 +50,7 @@ class AuthController extends Controller
         ];
 
 
-        $item_list = $itemRep->search(null, null, 1, 50, $params)->toArray();
+        $item_list = $itemRep->search(array(), array(), 1, 50, $params)->toArray();
 
         foreach ($item_list["entries"] as $key => $item_array){
 
