@@ -15,7 +15,7 @@ use Plenty\Plugin\Http\Response;
 use Plenty\Plugin\Log\Loggable;
 use Plenty\Modules\Item\ItemImage\Contracts;
 use Plenty\Modules\Plugin\DynamoDb\Contracts\DynamoDbRepositoryContract;
-
+use Plenty\Plugin\Application;
 
 
 class AuthController extends Controller
@@ -23,13 +23,12 @@ class AuthController extends Controller
 
 {
 
-
     private $item;
     private $imageRepository;
 
-    public function __construct(\Plenty\Modules\Item\Item\Contracts\ItemRepositoryContract $item, \Plenty\Modules\Item\ItemImage\Contracts\ItemImageRepositoryContract $imageRepository)
+    public function __construct(\Plenty\Plugin\Application $app, \Plenty\Modules\Item\ItemImage\Contracts\ItemImageRepositoryContract $imageRepository)
     {
-        $this->item = $item;
+        $this->app = $app;
         $this->imageRepository = $imageRepository;
     }
 
