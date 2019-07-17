@@ -26,7 +26,7 @@ class AuthController extends Controller
     private $item;
     private $imageRepository;
 
-    public function __construct(\Plenty\Plugin\Application $app, \Plenty\Modules\Item\ItemImage\Contracts\ItemImageRepositoryContract $imageRepository)
+    public function __construct(\Plenty\Modules\Item\ItemImage\Contracts\ItemImageRepositoryContract $imageRepository)
     {
         $this->app = $app;
         $this->imageRepository = $imageRepository;
@@ -39,7 +39,7 @@ class AuthController extends Controller
 
         $items_final = array();
 
-        $itemRep = pluginApp(\Plenty\Modules\Item\Item\Contracts\ItemRepositoryContract::class);
+        $app = pluginApp(\Plenty\Plugin\Application::class);
 
         $params = ["images"];
 
@@ -62,7 +62,7 @@ class AuthController extends Controller
 
         }
 
-        return $response->json($this->app->getPlentyId());
+        return $response->json($app->getPlentyId());
     }
 
 }
