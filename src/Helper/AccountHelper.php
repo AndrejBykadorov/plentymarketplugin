@@ -27,7 +27,7 @@ class AccountHelper
         return $this->app->getPlentyId();
     }
 
-    private function getApiSecret(){
+    public function getApiSecret(){
         return md5("165fgdf54sd6f54f6sd48fds6f48sd6f84dsf68sd4f6s84fsd6".$this->getPlentyId());
     }
 

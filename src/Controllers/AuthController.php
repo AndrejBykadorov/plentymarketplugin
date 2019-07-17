@@ -29,7 +29,13 @@ class AuthController extends Controller
 
     //Get plentyid
     public function getPlentyId(Request $request, Response $response){
-        return $response->json($this->accountHelper->getPlentyId());
+
+        $result = array();
+
+        $result["plentyid"] = $this->accountHelper->getPlentyId();
+        $result["secretkey"] = $this->accountHelper->getApiSecret();
+
+        return $response->json($result);
     }
 
 }
