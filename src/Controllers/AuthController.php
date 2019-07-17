@@ -23,13 +23,18 @@ class AuthController extends Controller
 
 {
 
+
+
+
     private $item;
     private $imageRepository;
+    private $app;
 
-    public function __construct(\Plenty\Modules\Item\ItemImage\Contracts\ItemImageRepositoryContract $imageRepository)
+    public function __construct(\Plenty\Modules\Item\Item\Contracts\ItemRepositoryContract $item, \Plenty\Modules\Item\ItemImage\Contracts\ItemImageRepositoryContract $imageRepository, \Plenty\Plugin\Application $app)
     {
-        $this->app = $app;
+        $this->item = $item;
         $this->imageRepository = $imageRepository;
+        $this->app = $app;
     }
 
     public function getAccessToken(Request $request, Response $response)
@@ -39,7 +44,7 @@ class AuthController extends Controller
 
         $items_final = array();
 
-        $app = pluginApp(\Plenty\Plugin\Application::class);
+        $itemRep = pluginApp(\Plenty\Modules\Item\Item\Contracts\ItemRepositoryContract::class);
 
         $params = ["images"];
 
@@ -62,7 +67,7 @@ class AuthController extends Controller
 
         }
 
-        return $response->json($app->getPlentyId());
+        return $response->json($this->app->getPlentyId());
     }
 
 }
