@@ -42,7 +42,7 @@ class AuthController extends Controller
 
         $itemRep = pluginApp(\Plenty\Modules\Item\Item\Contracts\ItemRepositoryContract::class);
 
-        $params = ["images" => null];
+        $params = ["images"];
 
         $item_list = $itemRep->search([],[],1,50, $params)->toArray();
 
@@ -62,7 +62,8 @@ class AuthController extends Controller
             }
 
         }
-        return $response->json($item_list);
+
+        return $response->json($this->app->getPlentyId());
     }
 
 }
