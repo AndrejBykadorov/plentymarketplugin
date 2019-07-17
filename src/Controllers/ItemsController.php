@@ -27,12 +27,7 @@ class ItemsController extends Controller
         $itemRep = pluginApp(\Plenty\Modules\Item\Item\Contracts\ItemRepositoryContract::class);
         $item_list = $itemRep->search()->toArray();
         return $response->json($item_list);
-
     }
-
-
-
-
 }
 
 

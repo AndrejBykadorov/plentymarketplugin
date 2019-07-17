@@ -1,7 +1,7 @@
 <?php
 namespace Ecos\Crons;
 use Plenty\Modules\Cron\Contracts\CronHandler as Cron;
-//use Etsy\Services\Batch\Item\ItemExportService;
+use Ecos\Service\ItemExportService;
 use Ecos\Helper\AccountHelper;
 use Plenty\Plugin\Log\Loggable;
 /**

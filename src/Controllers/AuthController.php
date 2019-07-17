@@ -13,7 +13,7 @@ use Plenty\Plugin\Controller;
 use Plenty\Plugin\Http\Request;
 use Plenty\Plugin\Http\Response;
 use Plenty\Plugin\Log\Loggable;
-use Plenty\Plugin\Application;
+
 
 
 class AuthController extends Controller

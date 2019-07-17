@@ -7,7 +7,7 @@
  */
 
 namespace Ecos\Helper;
-
+use Plenty\Plugin\Application;
 
 class AccountHelper
 {
