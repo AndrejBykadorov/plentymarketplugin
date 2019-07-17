@@ -26,7 +26,7 @@ class ItemsController extends Controller
     {
         $itemRep = pluginApp(\Plenty\Modules\Item\Item\Contracts\ItemRepositoryContract::class);
 
-        $params = ["itemProperties", "itemCrossSelling", "variations", "itemImages", "itemShippingProfiles", "ebayTitles"];
+        $params = ["itemImages"];
 
         $item_list = $itemRep->search([],[],1,50, $params)->toArray();
 
