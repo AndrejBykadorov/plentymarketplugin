@@ -9,6 +9,9 @@
 namespace Ecos;
 
 use Plenty\Plugin\ServiceProvider;
+use Plenty\Modules\Cron\Services\CronContainer;
+use Plenty\Log\Services\ReferenceContainer;
+use Ecos\Crons\ItemExportCron;
 
 class EcosServiceProvider extends ServiceProvider
 {
@@ -21,4 +24,12 @@ class EcosServiceProvider extends ServiceProvider
     {
         $this->getApplication()->register(EcosRouteServiceProvider::class);
     }
+
+    public function boot(CronContainer $container)
+    {
+        //register crons
+        $container->add(CronContainer::HOURLY, ItemExportCron::class);
+
+    }
+
 }

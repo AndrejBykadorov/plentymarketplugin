@@ -13,61 +13,23 @@ use Plenty\Plugin\Controller;
 use Plenty\Plugin\Http\Request;
 use Plenty\Plugin\Http\Response;
 use Plenty\Plugin\Log\Loggable;
-use Plenty\Modules\Item\ItemImage\Contracts;
-use Plenty\Modules\Plugin\DynamoDb\Contracts\DynamoDbRepositoryContract;
 use Plenty\Plugin\Application;
 
 
 class AuthController extends Controller
 
-
 {
 
+    private $accountHelper;
 
-
-
-    private $item;
-    private $imageRepository;
-    private $app;
-
-    public function __construct(\Plenty\Modules\Item\Item\Contracts\ItemRepositoryContract $item, \Plenty\Modules\Item\ItemImage\Contracts\ItemImageRepositoryContract $imageRepository, \Plenty\Plugin\Application $app)
+    public function __construct(\Ecos\Helper\AccountHelper $accountHelper)
     {
-        $this->item = $item;
-        $this->imageRepository = $imageRepository;
-        $this->app = $app;
+        $this->accountHelper = $accountHelper;
     }
 
-    public function getAccessToken(Request $request, Response $response)
-    {
-
-        //$item_list = $this->item->search()->toArray();
-
-        $items_final = array();
-
-        $itemRep = pluginApp(\Plenty\Modules\Item\Item\Contracts\ItemRepositoryContract::class);
-
-
-
-        $item_list = $itemRep->search()->toArray();
-
-        foreach ($item_list["entries"] as $key => $item_array) {
-
-            if ($item_array["id"] == 133) {
-
-                //$images = $this->imageRepository->findByItemId($item_array["id"]);
-                //$img = $this->imageRepository->findByVariationId($item_array["variationBase"]["id"]);
-
-                $items_final[$key] = array(
-                    "id" => $item_array["id"],
-                    "manufacturerID" => $item_array["manufacturerId"],
-                    "name" => $item_array["texts"][0]["name1"]
-                    //"images" => $images
-                );
-            }
-
-        }
-
-        return $response->json($this->app->getPlentyId());
+    //Get plentyid
+    public function getPlentyId(Request $request, Response $response){
+        return $response->json($this->accountHelper->getPlentyId());
     }
 
 }

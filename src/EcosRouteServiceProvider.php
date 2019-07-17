@@ -15,6 +15,7 @@ class EcosRouteServiceProvider extends RouteServiceProvider
      */
     public function map(ApiRouter $api, WebRouter $webRouter)
     {
-        $webRouter->get('markets/ecos/auth/access-token', ['uses' => 'Ecos\Controllers\AuthController@getAccessToken']);
+        $webRouter->get('markets/ecos/auth/plentyid', ['uses' => 'Ecos\Controllers\AuthController@getPlentyId']);
+        $webRouter->get('markets/ecos/sync/getitems', ['uses' => 'Ecos\Controllers\ItemsController@getItems']);
     }
 }
