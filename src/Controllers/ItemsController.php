@@ -25,7 +25,11 @@ class ItemsController extends Controller
     public function getItems(Request $request, Response $response)
     {
         $itemRep = pluginApp(\Plenty\Modules\Item\Item\Contracts\ItemRepositoryContract::class);
-        $item_list = $itemRep->search()->toArray();
+
+        $params = "itemProperties, itemCrossSelling, variations, itemImages, itemShippingProfiles, ebayTitles";
+
+        $item_list = $itemRep->search([],[],1,50, $params)->toArray();
+
         return $response->json($item_list);
     }
 }
