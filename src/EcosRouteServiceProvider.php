@@ -20,5 +20,6 @@ class EcosRouteServiceProvider extends RouteServiceProvider
         $webRouter->get('markets/ecos/data/getmanufacturer', ['uses' => 'Ecos\Controllers\ManufacturerController@getItems']);
         $webRouter->get('markets/ecos/data/getcategory', ['uses' => 'Ecos\Controllers\CategoryController@getItems']);
         $webRouter->get('markets/ecos/data/getlisting', ['uses' => 'Ecos\Controllers\ListingController@getItems']);
+        $webRouter->get('markets/ecos/data/getattribute', ['uses' => 'Ecos\Controllers\AttributeController@getItems']);
     }
 }
