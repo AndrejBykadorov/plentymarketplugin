@@ -14,7 +14,7 @@ use Plenty\Plugin\Http\Request;
 use Plenty\Plugin\Http\Response;
 use Plenty\Plugin\Log\Loggable;
 
-class ListingController
+class ListingController extends Controller
 {
     private $item;
     private $per_page = 50;
@@ -41,7 +41,7 @@ class ListingController
 
 
         //public search(int $page = 1, int $itemsPerPage = 50, array $with = [], array $filters = []):PaginatedResult
-        $item_list = $this->item->all($page, $this->per_page, $params)->toArray();
+        $item_list = $this->item->search($page, $this->per_page, $params)->toArray();
 
         $this->final_array[$page] = $item_list;
 
