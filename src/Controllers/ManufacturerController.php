@@ -17,7 +17,7 @@ use Plenty\Plugin\Log\Loggable;
 class ManufacturerController extends Controller
 {
     private $item;
-    private $per_page = 50;
+    private $per_page = 2;
     private $final_array = array();
 
     public function __construct(\Plenty\Modules\Item\Manufacturer\Contracts\ManufacturerRepositoryContract $item)
