@@ -20,7 +20,7 @@ class ItemsController extends Controller
 
     private $item;
 
-    public function __construct(Plenty\Modules\Item\DataLayer\Contracts\ItemDataLayerRepositoryContract $item)
+    public function __construct(\Plenty\Modules\Item\DataLayer\Contracts\ItemDataLayerRepositoryContract $item)
     {
         $this->item = $item;
     }
