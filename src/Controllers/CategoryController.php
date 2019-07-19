@@ -8,6 +8,10 @@
 
 namespace Ecos\Controllers;
 
+use Plenty\Plugin\Controller;
+use Plenty\Plugin\Http\Request;
+use Plenty\Plugin\Http\Response;
+use Plenty\Plugin\Log\Loggable;
 
 class CategoryController extends Controller
 {
