@@ -36,7 +36,7 @@ class ListingController extends Controller
 
 
         //The relations to load in the ListingMarket instance. The relations available are 'type', 'stockDependenceType' and 'markets'.
-        $params = ["type","stockDependenceType","markets"];
+        $params = ["type" => "type","stockDependenceType" =>"stockDependenceType","markets"=>"markets"];
 
 
 
