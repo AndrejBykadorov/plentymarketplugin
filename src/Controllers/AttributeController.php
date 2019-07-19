@@ -33,7 +33,7 @@ class AttributeController extends Controller
 
 
     public function GetPagedResult($page){
-        $item_list = $this->item->all(null, $this->per_page, $page)->toArray();
+        $item_list = $this->item->all(null, $this->per_page, $page);
 
         $this->final_array[$page] = $item_list;
 
