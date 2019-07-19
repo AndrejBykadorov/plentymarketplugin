@@ -17,7 +17,6 @@ class CategoryController extends Controller
 {
     private $item;
 
-
     public function __construct(\Plenty\Modules\Category\Contracts\CategoryRepositoryContract $item)
     {
         $this->item = $item;
