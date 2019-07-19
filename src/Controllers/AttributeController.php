@@ -20,7 +20,7 @@ class AttributeController extends Controller
     private $per_page = 50;
     private $final_array = array();
 
-    public function __construct(Plenty\Modules\Item\Attribute\Contracts\AttributeMapRepositoryContract $item)
+    public function __construct(\Plenty\Modules\Item\Attribute\Contracts\AttributeMapRepositoryContract $item)
     {
         $this->item = $item;
     }
