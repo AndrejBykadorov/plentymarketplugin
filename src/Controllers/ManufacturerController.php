@@ -17,7 +17,7 @@ use Plenty\Plugin\Log\Loggable;
 class ManufacturerController extends Controller
 {
     private $item;
-    private $per_page = 2;
+    private $per_page = 50;
     private $final_array = array();
 
     public function __construct(\Plenty\Modules\Item\Manufacturer\Contracts\ManufacturerRepositoryContract $item)
@@ -38,7 +38,7 @@ class ManufacturerController extends Controller
         $this->final_array[$page] = $item_list;
 
         if(!$item_list["isLastPage"]){
-            $this->GetPagedResult($page+1);
+            return $this->GetPagedResult($page+1);
         }else{
             return $this->final_array;
         }
