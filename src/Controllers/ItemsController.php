@@ -20,7 +20,7 @@ class ItemsController extends Controller
 
     private $item;
 
-    public function __construct(\Plenty\Modules\Item\Item\Contracts\ItemRepositoryContract $item)
+    public function __construct(Plenty\Modules\Item\DataLayer\Contracts\ItemDataLayerRepositoryContract $item)
     {
         $this->item = $item;
     }
@@ -30,7 +30,7 @@ class ItemsController extends Controller
 
         $params = ["itemImages"];
 
-        $item_list = $this->item->search(array(null),1,1,50,$params)->toArray();
+        $item_list = $this->item->search(null, [], $params)->toArray();
 
         return $response->json($item_list);
     }
