@@ -29,6 +29,7 @@ class ManufacturerController extends Controller
     {
 
         $item_list = $this->item->all([], 2, 1)->toArray();
+        return $response->json($item_list);
         //return $response->json($this->GetPagedResult(1));
     }
 
