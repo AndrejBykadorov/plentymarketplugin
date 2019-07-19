@@ -30,7 +30,7 @@ class ItemsController extends Controller
 
         $params = ["itemImages"];
 
-        $item_list = $this->item->search(null,[],1,1, $params)->toArray();
+        $item_list = $this->item->search([],null,1,50, $params)->toArray();
 
         return $response->json($item_list);
     }
