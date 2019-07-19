@@ -28,7 +28,7 @@ class ItemsController extends Controller
 
         $params = ["itemImages"];
 
-        $item_list = $itemRep->search([],[],1,50, $params)->toArray();
+        $item_list = $itemRep->search([],[],1,2, $params)->toArray();
 
         return $response->json($item_list);
     }
