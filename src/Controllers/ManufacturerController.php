@@ -26,7 +26,7 @@ class ManufacturerController extends Controller
     public function getItems(Request $request, Response $response)
     {
 
-        $item_list = $this->item->all([],300,1)->toArray();
+        $item_list = $this->item->all()->toArray();
 
         return $response->json($item_list);
     }
