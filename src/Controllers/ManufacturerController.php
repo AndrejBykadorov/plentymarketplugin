@@ -28,20 +28,17 @@ class ManufacturerController extends Controller
     public function getItems(Request $request, Response $response)
     {
 
-        $item_list = $this->item->all(null, 2, 1,[])->toArray();
-        return $response->json($item_list);
-        //return $response->json($this->GetPagedResult(1));
+        return $response->json($this->GetPagedResult(1));
     }
 
 
     public function GetPagedResult($page){
-        $item_list = $this->item->all([], $this->per_page, $page)->toArray();
+        $item_list = $this->item->all(null, $this->per_page, $page)->toArray();
 
         array_merge($this->final_array, $item_list);
 
         if(!$item_list["isLastPage"]){
             $this->GetPagedResult($page+1);
-            //return $this->final_array;
         }else{
             return $this->final_array;
         }
