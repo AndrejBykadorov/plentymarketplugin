@@ -35,7 +35,7 @@ class ManufacturerController extends Controller
     public function GetPagedResult($page){
         $item_list = $this->item->all(null, $this->per_page, $page)->toArray();
 
-        array_push($this->final_array, $item_list);
+        $this->final_array[$page] = $item_list;
 
         if(!$item_list["isLastPage"]){
             $this->GetPagedResult($page+1);
