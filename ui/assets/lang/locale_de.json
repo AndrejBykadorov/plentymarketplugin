@@ -54,11 +54,11 @@
   "shippingProfiles": {
     "tooltips": {
       "addCorrelation": "Verknüpfung hinzufügen",
-      "import": "Etsy-Versandprofile importieren"
+      "import": "Ecos-Versandprofile importieren"
     },
     "list": {
       "plentymarketsShippingProfile": "Plentymarkets-Versandprofil",
-      "etsyShippingProfile": "Etsy-Versandprofil"
+      "ecosShippingProfile": "Ecos-Versandprofil"
     },
     "alerts": {
       "correlationsSaved": "Versandprofilverknüpfungen gespeichert.",
@@ -74,7 +74,7 @@
     },
     "list": {
       "plentymarketsCategory": "Plentymarkets-Kategorie",
-      "etsyTaxonomy": "Etsy-Kategorie",
+      "ecosTaxonomy": "Ecos-Kategorie",
       "buttons": {
         "edit": "Bearbeiten",
         "delete": "Löschen"
@@ -82,7 +82,7 @@
     },
     "correlation": {
       "plentymarketsCategory": "Plentymarkets-Kategorie",
-      "etsyTaxonomy": "Etsy-Kategorie"
+      "ecosTaxonomy": "Ecos-Kategorie"
     },
     "tooltips": {
       "addCorrelation": "Verknüpfung hinzufügen"
@@ -99,7 +99,7 @@
     },
     "list": {
       "systemProperty": "Plentymarkets-Merkmal",
-      "property": "Etsy-Merkmal",
+      "property": "Ecos-Merkmal",
       "buttons": {
         "edit": "Bearbeiten",
         "delete": "Löschen"
@@ -107,17 +107,17 @@
     },
     "correlation": {
       "systemProperty": "Plentymarkets-Merkmal",
-      "property": "Etsy-Merkmal"
+      "property": "Ecos-Merkmal"
     },
     "tooltips": {
       "addCorrelation": "Verknüpfung hinzufügen",
-      "import": "Etsy-Merkmale importieren"
+      "import": "Ecos-Merkmale importieren"
     },
     "alerts": {
       "correlationsSaved": "Merkmalverknüpfungen gespeichert.",
       "correlationsNotSaved": "Merkmalverknüpfungen nicht gespeichert.",
-      "propertiesImported": "Etsy-Merkmale importiert.",
-      "propertiesNotImported": "Etsy-Merkmale nicht importiert."
+      "propertiesImported": "Ecos-Merkmale importiert.",
+      "propertiesNotImported": "Ecos-Merkmale nicht importiert."
     }
   }
 }
