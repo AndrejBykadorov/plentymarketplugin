@@ -17,7 +17,7 @@ use Plenty\Plugin\Log\Loggable;
 class ManufacturerController extends Controller
 {
     private $item;
-    private $per_page = 2;
+    private $per_page = 50;
     private $final_array = array();
 
     public function __construct(\Plenty\Modules\Item\Manufacturer\Contracts\ManufacturerRepositoryContract $item)
@@ -27,7 +27,9 @@ class ManufacturerController extends Controller
 
     public function getItems(Request $request, Response $response)
     {
-        return $response->json($this->GetPagedResult(1));
+
+        $item_list = $this->item->all([], 2, 1)->toArray();
+        //return $response->json($this->GetPagedResult(1));
     }
 
 
@@ -37,8 +39,8 @@ class ManufacturerController extends Controller
         array_merge($this->final_array, $item_list);
 
         if(!$item_list["isLastPage"]){
-            //$this->GetPagedResult($page+1);
-            return $this->final_array;
+            $this->GetPagedResult($page+1);
+            //return $this->final_array;
         }else{
             return $this->final_array;
         }
