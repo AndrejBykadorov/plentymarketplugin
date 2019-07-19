@@ -28,7 +28,8 @@ class ListingController extends Controller
     public function getItems(Request $request, Response $response)
     {
 
-        return $response->json($this->GetPagedResult(1));
+        //return $response->json($this->GetPagedResult(1));
+        return $response->json($this->item->search(1, $this->per_page)->toArray());
     }
 
 
