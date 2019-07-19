@@ -26,9 +26,9 @@ class ItemsController extends Controller
     {
         $itemRep = pluginApp(\Plenty\Modules\Item\Item\Contracts\ItemRepositoryContract::class);
 
-        //$params = ["itemImages"];
+        $params = ["itemImages"];
 
-        $item_list = $itemRep->search()->toArray();
+        $item_list = $itemRep->search([],[],1,2, $params)->toArray();
 
         return $response->json($item_list);
     }
