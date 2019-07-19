@@ -16,6 +16,7 @@ use Plenty\Plugin\Log\Loggable;
 
 class ManufacturerController extends Controller
 {
+
     private $item;
     private $per_page = 50;
     private $final_array = array();
