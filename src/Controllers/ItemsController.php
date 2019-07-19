@@ -17,18 +17,20 @@ use Plenty\Plugin\Log\Loggable;
 class ItemsController extends Controller
 
 {
-    public function __construct()
-    {
 
+    private $item;
+
+    public function __construct(\Plenty\Modules\Item\Item\Contracts\ItemRepositoryContract $item)
+    {
+        $this->item = $item;
     }
 
     public function getItems(Request $request, Response $response)
     {
-        $itemRep = pluginApp(\Plenty\Modules\Item\Item\Contracts\ItemRepositoryContract::class);
 
         $params = ["itemImages"];
 
-        $item_list = $itemRep->search([],[],1,2, $params)->toArray();
+        $item_list = $this->item->search([],[],1,2, $params)->toArray();
 
         return $response->json($item_list);
     }
