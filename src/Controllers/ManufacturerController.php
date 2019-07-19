@@ -13,11 +13,12 @@ use Plenty\Plugin\Http\Request;
 use Plenty\Plugin\Http\Response;
 use Plenty\Plugin\Log\Loggable;
 
+
 class ManufacturerController extends Controller
 {
     private $item;
 
-    public function __construct(\Plenty\Modules\Item\Manufacturer\Contracts $item)
+    public function __construct(\Plenty\Modules\Item\Manufacturer\Contracts\ManufacturerRepositoryContract $item)
     {
         $this->item = $item;
     }
