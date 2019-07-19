@@ -41,7 +41,7 @@ class ListingController extends Controller
 
 
         //public search(int $page = 1, int $itemsPerPage = 50, array $with = [], array $filters = []):PaginatedResult
-        $item_list = $this->item->search($page, $this->per_page, $params)->toArray();
+        $item_list = $this->item->search()->toArray();
 
         $this->final_array[$page] = $item_list;
 
